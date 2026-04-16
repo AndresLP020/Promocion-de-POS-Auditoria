@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import HoloBackground from "@/components/HoloBackground";
 import MockPOS from "@/components/MockPOS";
 import AIRecommenderMock from "@/components/AIRecommenderMock";
+import ContactSection from "@/components/ContactSection";
 import type { ReactNode } from "react";
 
 function Logo() {
@@ -30,8 +31,29 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 }
 
 export default function Home() {
-  const whatsappHref = "https://wa.me/5210000000000?text=Hola%20VENDAPP%2C%20quiero%20solicitar%20una%20demo%20del%20Punto%20de%20Venta%20inteligente.";
-  const mailHref = "mailto:ventas@vendapp.com?subject=Solicitud%20de%20demo%20VENDAPP";
+  const whatsappHref =
+    "https://wa.me/527226183651?text=Hola%20VENDAPP%2C%20quiero%20solicitar%20una%20demo%20del%20Punto%20de%20Venta%20inteligente.";
+  const contactEmail = "vendappsoftw@gmail.com";
+  const mailHref = `mailto:${contactEmail}?subject=Solicitud%20de%20demo%20VENDAPP`;
+  const phoneDisplay = "+52 722 618 3651";
+  const socialLinks = [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/vendappemprem?igsh=MXMwd3hxOGNhZGN0Yg==",
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/people/Vendaap/61573341094706/?rdid=z64RgC4MPyK7KBJT&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18TLLxkBdR%2F",
+    },
+    {
+      label: "TikTok",
+      href: "https://www.tiktok.com/@vendapp2",
+    },
+    {
+      label: "X",
+      href: "https://x.com/VendApp0",
+    },
+  ] as const;
 
   return (
     <div className="relative min-h-screen">
@@ -41,6 +63,7 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
           <Logo />
           <nav className="hidden items-center gap-1 md:flex">
+            <NavLink href="#conocenos">Conócenos</NavLink>
             <NavLink href="#funciona">Funciona</NavLink>
             <NavLink href="#beneficios">Beneficios</NavLink>
             <NavLink href="#ia">IA</NavLink>
@@ -144,6 +167,201 @@ export default function Home() {
                 <div className="pointer-events-none absolute -top-10 -right-12 h-28 w-28 rounded-full bg-violet-500/10 blur-xl" />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Conócenos */}
+        <section id="conocenos" className="scroll-mt-24 pt-16 md:pt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <p className="text-xs font-semibold tracking-widest text-sky-100/70">Conócenos</p>
+            <h2 className="mt-2 text-2xl font-bold text-sky-50 md:text-3xl">Sobre nosotros</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+            className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8"
+          >
+            <h3 className="text-xl font-extrabold text-sky-50">VENDAPP</h3>
+            <p className="mt-4 text-sm leading-relaxed text-sky-100/65">
+              VENDAPP es una empresa virtual dedicada al desarrollo y comercialización de sistemas de punto de venta para el sector de la alimentación.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-sky-100/65">
+              La empresa ofrece herramientas digitales innovadoras que optimizan los procesos operativos, mejoran la atención al cliente y facilitan la toma de decisiones mediante informes y análisis de datos en tiempo real.
+            </p>
+          </motion.div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.55 }}
+              className="rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(56,189,248,0.08),rgba(167,139,250,0.04))] p-6 backdrop-blur"
+            >
+              <p className="text-xs font-semibold tracking-widest text-sky-100/70">Visión</p>
+              <p className="mt-3 text-sm leading-relaxed text-sky-100/70">
+                Ser una empresa reconocida por ofrecer soluciones tecnológicas innovadoras para el sector de la alimentación, ayudando a las empresas a modernizar su gestión, ampliar sus servicios y mejorar la atención al cliente mediante herramientas digitales como los asistentes virtuales.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.55, delay: 0.06 }}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+            >
+              <p className="text-xs font-semibold tracking-widest text-sky-100/70">Misión</p>
+              <p className="mt-3 text-sm leading-relaxed text-sky-100/70">
+                Desarrollar soluciones de software eficientes para la gestión y administración de ventas minoristas y mayoristas en el sector de la alimentación, facilitando el control de inventario, la gestión de ventas y el servicio al cliente mediante herramientas tecnológicas innovadoras.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8"
+          >
+            <p className="text-xs font-semibold tracking-widest text-sky-100/70">Objetivos</p>
+            <p className="mt-2 text-sm font-bold text-sky-50">Objetivo general</p>
+            <p className="mt-3 text-sm leading-relaxed text-sky-100/65">
+              Desarrollar e implementar software especializado que optimice la gestión administrativa y las ventas en negocios de alimentación, mejorando la eficiencia operativa y el servicio al cliente.
+            </p>
+            <p className="mt-6 text-sm font-bold text-sky-50">Objetivos específicos</p>
+            <ol className="mt-4 space-y-3 text-sm leading-relaxed text-sky-100/65">
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-100 ring-1 ring-sky-200/20">
+                  1
+                </span>
+                <span>Diseñar sistemas de software que faciliten el control de inventario, ventas y compras en supermercados.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-100 ring-1 ring-sky-200/20">
+                  2
+                </span>
+                <span>Implementar herramientas digitales que ayuden a mejorar el servicio al cliente, como los asistentes virtuales.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-100 ring-1 ring-sky-200/20">
+                  3
+                </span>
+                <span>Desarrollar soluciones tecnológicas que permitan la gestión de las ventas minoristas y mayoristas.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-100 ring-1 ring-sky-200/20">
+                  4
+                </span>
+                <span>Facilitar la toma de decisiones mediante informes y análisis de información empresarial.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-100 ring-1 ring-sky-200/20">
+                  5
+                </span>
+                <span>Contribuir a la modernización y al crecimiento de las empresas del sector de la alimentación mediante el uso de la tecnología.</span>
+              </li>
+            </ol>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            className="mt-12"
+          >
+            <p className="text-xs font-semibold tracking-widest text-sky-100/70">Una plataforma, tres ventajas</p>
+            <h3 className="mt-2 text-xl font-bold text-sky-50 md:text-2xl">
+              Diseñada para comercios que quieren vender más, con menos fricción y experiencias memorables.
+            </h3>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  title: "POS y tienda web unificados",
+                  desc: "Tu negocio en mostrador y en línea con el mismo inventario, precios y pedidos en tiempo real.",
+                },
+                {
+                  title: "Carrito que optimiza tu compra",
+                  desc: "Los clientes compran desde casa; el carrito organiza productos para una compra más rápida y eficiente.",
+                },
+                {
+                  title: "IA para cocinar y planificar",
+                  desc: "Recetas paso a paso, métodos de preparación y sugerencias de platos según lo que quieran cocinar.",
+                },
+              ].map((card, idx) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+                >
+                  <h4 className="text-base font-bold text-sky-50">{card.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-sky-100/60">{card.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            className="mt-12 rounded-3xl border border-sky-200/15 bg-[linear-gradient(180deg,rgba(56,189,248,0.10),rgba(167,139,250,0.05))] p-6 backdrop-blur md:p-8"
+          >
+            <p className="text-xs font-semibold tracking-widest text-sky-100/70">Inteligencia en la cocina</p>
+            <h3 className="mt-2 text-xl font-bold text-sky-50 md:text-2xl">IA que habla el idioma de tu cocina</h3>
+            <p className="mt-4 text-sm leading-relaxed text-sky-100/65">
+              Los clientes descubren qué pueden cocinar con lo que encuentran en tu tienda: métodos de preparación, sustitutos útiles y recetas alineadas con el carrito para una compra enfocada.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-sky-100/70">
+              {[
+                "Guía de pasos para cada plato",
+                "Ideas según ingredientes disponibles",
+                "Menos dudas, más conversión",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-200 ring-1 ring-emerald-200/25">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            >
+              <h4 className="text-lg font-bold text-sky-50">Receta con lo que ya agregué al carrito</h4>
+              <p className="mt-2 text-sm text-sky-100/60">Síntesis de pasos y tiempos estimados.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.06 }}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            >
+              <h4 className="text-lg font-bold text-sky-50">Platos vegetarianos con tus productos</h4>
+              <p className="mt-2 text-sm text-sky-100/60">Sugerencias filtradas por categoría.</p>
+            </motion.div>
           </div>
         </section>
 
@@ -340,73 +558,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contacto */}
-        <section id="contacto" className="scroll-mt-24 pb-16 pt-16 md:pt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-10 backdrop-blur relative overflow-hidden"
-          >
-            <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl" />
-            <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-violet-400/10 blur-3xl" />
-
-            <div className="relative grid gap-8 md:grid-cols-12 md:items-center">
-              <div className="md:col-span-7">
-                <p className="text-xs font-semibold tracking-widest text-sky-100/70">Contacto</p>
-                <h2 className="mt-2 text-2xl font-bold text-sky-50 md:text-3xl">
-                  ¿Listo para vender más rápido?
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-sky-100/60">
-                  Solicita tu demo de VENDAPP y te mostramos cómo se integra a tu operación para acelerar ventas y mejorar sugerencias.
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-sky-400/35 to-violet-400/35 px-6 py-3 text-sm font-bold text-sky-50 ring-1 ring-white/10 shadow-[0_0_42px_rgba(56,189,248,0.14)] transition-transform hover:scale-[1.02]"
-                  >
-                    WhatsApp (demo)
-                  </a>
-                  <a
-                    href={mailHref}
-                    className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-sky-50 transition-colors hover:bg-white/10"
-                  >
-                    Enviar correo
-                  </a>
-                </div>
-              </div>
-
-              <div className="md:col-span-5">
-                <div className="rounded-3xl border border-white/10 bg-black/15 p-5">
-                  <p className="text-sm font-bold text-sky-50">Checklist rápido</p>
-                  <div className="mt-3 space-y-2">
-                    {[
-                      "Operación actual (turnos/picos)",
-                      "Tipo de negocio (cocina/cafetería/etc.)",
-                      "Objetivo (ticket/tiempo/inventario)",
-                      "Horarios y volumen de pedidos",
-                    ].map((t) => (
-                      <div key={t} className="flex items-start gap-2 text-sm text-sky-100/65">
-                        <span className="mt-1.5 h-2 w-2 rounded-full bg-cyan-300/85 shadow-[0_0_14px_rgba(56,189,248,0.45)]" />
-                        <span>{t}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-xs text-sky-100/45">
-                    Responde por WhatsApp o correo y te proponemos la mejor configuración.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="mt-6 text-center text-xs text-sky-100/45">
-            © {new Date().getFullYear()} VENDAPP. Futurista, rápido y listo para vender.
-          </div>
-        </section>
+        <ContactSection
+          whatsappHref={whatsappHref}
+          mailHref={mailHref}
+          contactEmail={contactEmail}
+          phoneDisplay={phoneDisplay}
+          socialLinks={socialLinks}
+        />
       </main>
     </div>
   );
