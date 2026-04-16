@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import HoloBackground from "@/components/HoloBackground";
 import MockPOS from "@/components/MockPOS";
 import AIRecommenderMock from "@/components/AIRecommenderMock";
@@ -9,8 +10,17 @@ import type { ReactNode } from "react";
 
 function Logo() {
   return (
-    <div className="flex items-center gap-3">
-      <div className="h-10 w-10 rounded-2xl bg-[linear-gradient(180deg,rgba(56,189,248,0.30),rgba(167,139,250,0.22))] ring-1 ring-white/10 shadow-[0_0_36px_rgba(56,189,248,0.22)]" />
+    <div className="flex items-center gap-8">
+      <div className="relative h-10 w-10 overflow-visible">
+        <Image
+          src="/op1%20(1).png"
+          alt="Logo de VENDAPP"
+          fill
+          sizes="112px"
+          className="-translate-x-3 scale-[2.8] object-contain"
+          priority
+        />
+      </div>
       <div className="leading-tight">
         <p className="text-sm font-bold tracking-wide text-sky-50">VENDAPP</p>
         <p className="text-[11px] text-sky-100/60">Punto de venta con IA</p>
@@ -52,6 +62,10 @@ export default function Home() {
     {
       label: "X",
       href: "https://x.com/VendApp0",
+    },
+    {
+      label: "YouTube",
+      href: "https://youtube.com/@vendapp-g9z?si=lZxfDfgsYpoRusGQ",
     },
   ] as const;
 

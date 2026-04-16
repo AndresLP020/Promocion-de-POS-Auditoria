@@ -64,6 +64,14 @@ function IconX({ className }: { className?: string }) {
   );
 }
 
+function IconYouTube({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M23.5 6.2a3 3 0 00-2.12-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.58A3 3 0 00.5 6.2 31.7 31.7 0 000 12a31.7 31.7 0 00.5 5.8 3 3 0 002.12 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.58a3 3 0 002.12-2.12A31.7 31.7 0 0024 12a31.7 31.7 0 00-.5-5.8zM9.6 15.5v-7L15.8 12l-6.2 3.5z" />
+    </svg>
+  );
+}
+
 function IconArrow({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -83,6 +91,8 @@ function socialIcon(label: string): ReactNode {
       return <IconTikTok className={cls} />;
     case "X":
       return <IconX className={cls} />;
+    case "YouTube":
+      return <IconYouTube className={cls} />;
     default:
       return null;
   }
@@ -98,6 +108,8 @@ function accentForSocial(label: string): string {
       return "from-cyan-400/20 to-fuchsia-500/15";
     case "X":
       return "from-zinc-300/15 to-sky-400/15";
+    case "YouTube":
+      return "from-red-500/25 to-rose-500/15";
     default:
       return "from-sky-500/20 to-violet-500/15";
   }
